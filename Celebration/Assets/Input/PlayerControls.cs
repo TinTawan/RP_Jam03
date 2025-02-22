@@ -37,6 +37,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""83259965-c482-4d2b-add5-a1af3f6b494e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""c7073f37-f25b-4bea-b4d7-33369558b347"",
@@ -122,11 +131,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""52991d67-2f89-4f79-9370-483a452eb959"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""5b35a9bd-413e-4442-a114-0ecd5eb9c276"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fa81570-376f-48d3-8fec-fd91f8d04181"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -144,12 +175,56 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""33962448-5c00-4ed8-9ede-f50e092b8955"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LeftGrab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""2bd14ea6-e46a-4598-ad4e-b7d89addd99c"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""RightGrab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""624e0c79-ac35-450e-80b8-55dbf1c02ed6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RightGrab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79d4e17e-e58f-4d04-bcfc-0a61164cc563"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a63af1d-2aef-4f92-91cf-564a2978f186"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -161,12 +236,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""name"": ""KeyboardMouse"",
             ""bindingGroup"": ""KeyboardMouse"",
             ""devices"": []
+        },
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": []
         }
     ]
 }");
         // General
         m_General = asset.FindActionMap("General", throwIfNotFound: true);
         m_General_Move = m_General.FindAction("Move", throwIfNotFound: true);
+        m_General_Look = m_General.FindAction("Look", throwIfNotFound: true);
         m_General_Jump = m_General.FindAction("Jump", throwIfNotFound: true);
         m_General_LeftGrab = m_General.FindAction("LeftGrab", throwIfNotFound: true);
         m_General_RightGrab = m_General.FindAction("RightGrab", throwIfNotFound: true);
@@ -232,6 +313,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_General;
     private List<IGeneralActions> m_GeneralActionsCallbackInterfaces = new List<IGeneralActions>();
     private readonly InputAction m_General_Move;
+    private readonly InputAction m_General_Look;
     private readonly InputAction m_General_Jump;
     private readonly InputAction m_General_LeftGrab;
     private readonly InputAction m_General_RightGrab;
@@ -240,6 +322,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         private @PlayerControls m_Wrapper;
         public GeneralActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_General_Move;
+        public InputAction @Look => m_Wrapper.m_General_Look;
         public InputAction @Jump => m_Wrapper.m_General_Jump;
         public InputAction @LeftGrab => m_Wrapper.m_General_LeftGrab;
         public InputAction @RightGrab => m_Wrapper.m_General_RightGrab;
@@ -255,6 +338,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
@@ -271,6 +357,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
@@ -306,9 +395,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
         }
     }
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
+        {
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
     public interface IGeneralActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLeftGrab(InputAction.CallbackContext context);
         void OnRightGrab(InputAction.CallbackContext context);
