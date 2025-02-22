@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls pControls;
     Rigidbody rb;
     Transform cam;
+    ConfigurableJoint rootJoint;
+
 
     Vector2 moveVect;
     [SerializeField] float moveSpeed = 1f;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rootJoint = GetComponent<ConfigurableJoint>();
 
         pControls = new PlayerControls();
         pControls.General.Enable();
@@ -61,19 +64,20 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(dir * moveForce, ForceMode.Force);*/
 
         Vector3 dir = (cam.forward.normalized * moveVect.y) + (cam.right.normalized * moveVect.x);
-        rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);
 
         //rotate player to face forward when moving
         if (moveVect != Vector2.zero)
         {
-            Quaternion rot = Quaternion.Euler(0, cam.eulerAngles.y, 0);
+            Quaternion rot = Quaternion.Euler(0, cam.eulerAngles.y + 90, 0);
+            Quaternion inv = Quaternion.Inverse(rot);
 
-            Quaternion lerp = Quaternion.Lerp(transform.rotation, rot, Time.fixedDeltaTime * rotateSmooth);
-            //Quaternion inv = Quaternion.Inverse(rot);
+            Quaternion lerp = Quaternion.Lerp(transform.rotation, inv, Time.fixedDeltaTime * rotateSmooth);
 
-            //transform.rotation = rot;
-            //rb.rotation = rot;
-            rb.MoveRotation(lerp);
+            //rb.MoveRotation(lerp);
+            rootJoint.targetRotation = inv;
+
+
+            rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);   
         }
     }
 
