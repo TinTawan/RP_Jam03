@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotateSmooth = 1f;
 
     bool isGrounded;
-
+    bool rightHandUp, leftHandUp;
 
 
     private void Awake()
@@ -26,16 +26,46 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rootJoint = GetComponent<ConfigurableJoint>();
 
+        cam = Camera.main.transform;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnEnable()
+    {
         pControls = new PlayerControls();
         pControls.General.Enable();
         pControls.General.Move.performed += Move_performed;
         pControls.General.Move.canceled += Move_canceled;
         pControls.General.Jump.performed += Jump_performed;
-
-        cam = Camera.main.transform;
-        Cursor.lockState = CursorLockMode.Locked;
+        pControls.General.RightGrab.performed += RightGrab_performed;
+        pControls.General.RightGrab.canceled += RightGrab_canceled;
+        pControls.General.LeftGrab.performed += LeftGrab_performed;
+        pControls.General.LeftGrab.canceled += LeftGrab_canceled;
     }
 
+    private void LeftGrab_canceled(InputAction.CallbackContext ctx)
+    {
+        leftHandUp = ctx.ReadValueAsButton();
+        Debug.Log($"Left: {leftHandUp}");
+    }
+    private void LeftGrab_performed(InputAction.CallbackContext ctx)
+    {
+        leftHandUp = ctx.ReadValueAsButton();
+        Debug.Log($"Left: {leftHandUp}");
+
+    }
+    private void RightGrab_canceled(InputAction.CallbackContext ctx)
+    {
+        rightHandUp = ctx.ReadValueAsButton();
+        Debug.Log($"Right: {rightHandUp}");
+
+    }
+    private void RightGrab_performed(InputAction.CallbackContext ctx)
+    {
+        rightHandUp = ctx.ReadValueAsButton();
+        Debug.Log($"Right: {rightHandUp}");
+
+    }
 
     private void Move_performed(InputAction.CallbackContext ctx)
     {
@@ -95,6 +125,21 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+
+    public Vector2 GetMoveVect()
+    {
+        return moveVect;
+    }
+
+    public bool GetRightGrab()
+    {
+        return rightHandUp;
+    }
+    public bool GetLeftGrab()
+    {
+        return leftHandUp;
     }
 
 
