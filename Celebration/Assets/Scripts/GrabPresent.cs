@@ -48,7 +48,7 @@ public class GrabPresent : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log($"Enter trigger: {col.name}");
+        //Debug.Log($"Enter trigger: {col.name}");
         if (col.CompareTag("Present"))
         {
             present = col.gameObject;

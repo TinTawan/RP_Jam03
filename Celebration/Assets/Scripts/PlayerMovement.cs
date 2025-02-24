@@ -50,24 +50,24 @@ public class PlayerMovement : MonoBehaviour
     private void LeftGrab_canceled(InputAction.CallbackContext ctx)
     {
         leftHandUp = ctx.ReadValueAsButton();
-        Debug.Log($"Left: {leftHandUp}");
+        //Debug.Log($"Left: {leftHandUp}");
     }
     private void LeftGrab_performed(InputAction.CallbackContext ctx)
     {
         leftHandUp = ctx.ReadValueAsButton();
-        Debug.Log($"Left: {leftHandUp}");
+        //Debug.Log($"Left: {leftHandUp}");
 
     }
     private void RightGrab_canceled(InputAction.CallbackContext ctx)
     {
         rightHandUp = ctx.ReadValueAsButton();
-        Debug.Log($"Right: {rightHandUp}");
+        //Debug.Log($"Right: {rightHandUp}");
 
     }
     private void RightGrab_performed(InputAction.CallbackContext ctx)
     {
         rightHandUp = ctx.ReadValueAsButton();
-        Debug.Log($"Right: {rightHandUp}");
+        //Debug.Log($"Right: {rightHandUp}");
 
     }
 
@@ -119,21 +119,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    /*private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-    private void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }*/
 
     void GroundCheck()
     {
