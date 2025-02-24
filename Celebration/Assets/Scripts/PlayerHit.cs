@@ -57,14 +57,14 @@ public class PlayerHit : MonoBehaviour
     void SetRagdollLengthImpulse()
     {
         ragTime = Random.Range(rTimeMin, rTimeMax);
-        Debug.Log($"Ragdoll Time: {ragTime}");
+        //Debug.Log($"Ragdoll Time: {ragTime}");
 
         float interp = Mathf.InverseLerp(rTimeMin, rTimeMax, ragTime);
         impulse = Mathf.Lerp(impulseForceMin, impulseForceMax, interp);
 
         //impulse = interp * (impulseForceMax - impulseForceMin);
 
-        Debug.Log($"Impulse Val: {impulse}");
+        //Debug.Log($"Impulse Val: {impulse}");
     }
 
 }
