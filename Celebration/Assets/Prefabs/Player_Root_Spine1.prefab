@@ -1295,8 +1295,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.005
-  m_Center: {x: -0.002, y: 0.0075, z: 0}
+  m_Radius: 0.0042025037
+  m_Center: {x: -0.0015859543, y: 0.009661824, z: 0.0036156971}
 --- !u!114 &2681466171433502072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,7 +1355,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2707491633658264338}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: be4e381ff403628458507fc4122ef2d9, type: 3}
   m_Controller: {fileID: 9100000, guid: 12345d943610d4a44ab71bc81a706975, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 5606799710490319258}
   m_Layer: 8
   m_Name: Stabiliser
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3451,8 +3451,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.005
-  m_Center: {x: -0.002, y: 0.0075, z: 0}
+  m_Radius: 0.004242869
+  m_Center: {x: -0.0022025704, y: 0.0088344915, z: -0.0032419683}
 --- !u!114 &5545601938513488271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4200,6 +4200,8 @@ GameObject:
   - component: {fileID: 821766495490639419}
   - component: {fileID: 895163327751042553}
   - component: {fileID: 8168536719713112208}
+  - component: {fileID: 2411518226058506861}
+  - component: {fileID: 729059856630332225}
   m_Layer: 7
   m_Name: Player_Root_Spine1
   m_TagString: Player
@@ -4215,7 +4217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556754225688541933}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.875249, y: 3.7523699, z: -7.227}
   m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
@@ -4399,6 +4401,46 @@ MonoBehaviour:
   moveSpeed: 75
   jumpForce: 75
   rotateSmooth: 5
+  slerpDriveMax: 4000
+  slerpDriveMin: 150
+  ragdoll: 0
+--- !u!65 &2411518226058506861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556754225688541933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013751618, y: 0.05650876, z: 0.018003492}
+  m_Center: {x: 0, y: -0.003301702, z: 0}
+--- !u!114 &729059856630332225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556754225688541933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3cb88db49a03145807ebb6b9b82abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulseForceMin: 30
+  impulseForceMax: 150
+  rTimeMin: 0.5
+  rTimeMax: 3
 --- !u!1 &8559633628543374723
 GameObject:
   m_ObjectHideFlags: 0
