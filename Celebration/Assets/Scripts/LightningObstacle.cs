@@ -8,8 +8,9 @@ public class LightningObstacle : MonoBehaviour
     SphereCollider areaCol;
     Material dangerRed;
 
-    [SerializeField] float strikeTimer = 5f;
-    [SerializeField] bool strike;
+    [SerializeField] float strikeLerpTime = 5f, maxStrikeTimer = 16f;
+    
+    bool strike;
 
     float timer;
 
@@ -43,7 +44,7 @@ public class LightningObstacle : MonoBehaviour
 
     void LerpToRed()
     {
-        dangerRed.color = Color.Lerp(dangerRed.color, Color.red, Time.deltaTime * strikeTimer);
+        dangerRed.color = Color.Lerp(dangerRed.color, Color.red, Time.deltaTime * strikeLerpTime);
 
 
         if(dangerRed.color == Color.red)
@@ -59,7 +60,7 @@ public class LightningObstacle : MonoBehaviour
         areaCol.enabled = true;
         strike = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         Debug.Log("stop strike");
 
@@ -73,7 +74,7 @@ public class LightningObstacle : MonoBehaviour
         if(timer <= 0)
         {
             strike = true;
-            timer = Random.Range(10, 20);
+            timer = Random.Range(4, maxStrikeTimer);
         }
         else
         {

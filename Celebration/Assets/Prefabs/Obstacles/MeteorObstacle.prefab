@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4927571816361805680}
   - component: {fileID: 7551839052869428263}
   - component: {fileID: 2667225939508847435}
-  - component: {fileID: 4666950812444989034}
+  - component: {fileID: 826251391811120934}
   m_Layer: 0
   m_Name: Big rock
   m_TagString: Obstacle
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4666950812444989034
-SphereCollider:
+--- !u!64 &826251391811120934
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,9 +102,10 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.012
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7111327051868206511, guid: a37f45e66bd11ca4992a8fab7dbddfe6, type: 3}
 --- !u!1 &3336290158006332075
 GameObject:
   m_ObjectHideFlags: 0
