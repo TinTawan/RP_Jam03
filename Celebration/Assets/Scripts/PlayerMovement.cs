@@ -10,7 +10,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Transform cam;
     ConfigurableJoint rootJoint;
+    RagdollStabiliser stabiliser;
 
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] float groundCheckDist;
 
     Vector2 moveVect;
     [SerializeField] float moveSpeed = 1f;
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rootJoint = GetComponent<ConfigurableJoint>();
+        stabiliser = GetComponentInChildren<RagdollStabiliser>();
 
         cam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
@@ -83,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        GroundCheck();
+    }
     private void FixedUpdate()
     {
         Move();
@@ -112,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision col)
+    /*private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Ground"))
         {
@@ -125,6 +133,23 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }*/
+
+    void GroundCheck()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit lineHit, groundCheckDist, groundLayer))
+        {
+            isGrounded = true;
+            stabiliser.SetActivateForce(true);
+        }
+        else
+        {
+            isGrounded = false;
+            stabiliser.SetActivateForce(false);
+
+        }
+        //Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
+        //Debug.DrawLine(transform.position, end, Color.red);
     }
 
 

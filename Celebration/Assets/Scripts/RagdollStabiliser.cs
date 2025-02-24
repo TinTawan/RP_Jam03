@@ -19,4 +19,10 @@ public class RagdollStabiliser : MonoBehaviour
 
         }
     }
+
+    public void SetActivateForce(bool inBool)
+    {
+        activateForce = inBool;
+    }
+
 }
