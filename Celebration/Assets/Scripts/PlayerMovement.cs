@@ -23,12 +23,17 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool rightHandUp, leftHandUp;
 
+    ConfigurableJoint[] bodyJoints;
+    [SerializeField] float SlerpDrive = 4000f;
+    bool ragdoll = false;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rootJoint = GetComponent<ConfigurableJoint>();
         stabiliser = GetComponentInChildren<RagdollStabiliser>();
+        bodyJoints = GetComponentsInChildren<ConfigurableJoint>();
 
         cam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
@@ -94,6 +99,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
+        if (ragdoll)
+        {
+            RagdollPlayer();
+        }
+        else
+        {
+
+        }
     }
 
     void Move()
@@ -135,6 +149,25 @@ public class PlayerMovement : MonoBehaviour
         }
         Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
         Debug.DrawLine(transform.position, end, Color.red);
+    }
+
+    void RagdollPlayer()
+    {
+        stabiliser.SetActivateForce(false);
+        
+    }
+
+    void SetSlerpDrive(float inVal)
+    {
+        
+
+        foreach(ConfigurableJoint cj in bodyJoints)
+        {
+            JointDrive drive = new JointDrive();
+            cj.slerpDrive = drive;
+            drive.positionSpring = inVal;
+        }
+
     }
 
 

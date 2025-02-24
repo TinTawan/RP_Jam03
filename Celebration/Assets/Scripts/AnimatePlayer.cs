@@ -26,6 +26,14 @@ public class AnimatePlayer : MonoBehaviour
     {
         if (pMovement == null) return;
         Vector2 moveVect = pMovement.GetMoveVect();
+        if(moveVect.magnitude != 0)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
 
         //rGrab = pMovement.GetRightGrab();
         //lGrab = pMovement.GetLeftGrab();
