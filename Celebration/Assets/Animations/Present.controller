@@ -40,7 +40,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: State
+  m_BlendParameter: state
   m_BlendParameterY: Blend
   m_MinThreshold: 1
   m_MaxThreshold: 4
@@ -56,7 +56,7 @@ AnimatorController:
   m_Name: Present
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: State
+  - m_Name: state
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
