@@ -133,8 +133,8 @@ public class PlayerMovement : MonoBehaviour
             stabiliser.SetActivateForce(false);
 
         }
-        //Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
-        //Debug.DrawLine(transform.position, end, Color.red);
+        Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
+        Debug.DrawLine(transform.position, end, Color.red);
     }
 
 
