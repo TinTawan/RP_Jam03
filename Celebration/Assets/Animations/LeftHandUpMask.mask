@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LeftHandUpMask
+  m_Mask: 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Spine Down
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Ass
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Ass/Ass_end
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Left Hip
+    m_Weight: 0
+  - m_Path: 'Armature/Spine Down/Left Hip/Left Leg '
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Left Hip/Left Leg /Left Foot
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Left Hip/Left Leg /Left Foot/Left Foot_end
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Right Hip
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Right Hip/Right Leg
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Right Hip/Right Leg/Right Foot
+    m_Weight: 0
+  - m_Path: Armature/Spine Down/Right Hip/Right Leg/Right Foot/Right Foot_end
+    m_Weight: 0
+  - m_Path: Armature/Spine Up
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Head
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Head/Head_end
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Left Sholder
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Left Sholder/Left Arm
+    m_Weight: 1
+  - m_Path: Armature/Spine Up/Left Sholder/Left Arm/Left Hand
+    m_Weight: 1
+  - m_Path: Armature/Spine Up/Left Sholder/Left Arm/Left Hand/Left Hand_end
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Right Sholder
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Right Sholder/Right Arm
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Right Sholder/Right Arm/Right Hand
+    m_Weight: 0
+  - m_Path: Armature/Spine Up/Right Sholder/Right Arm/Right Hand/Right Hand_end
+    m_Weight: 0
+  - m_Path: 'Murphy '
+    m_Weight: 0

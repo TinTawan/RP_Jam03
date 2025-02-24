@@ -35,10 +35,19 @@ public class AnimatePlayer : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        //rGrab = pMovement.GetRightGrab();
-        //lGrab = pMovement.GetLeftGrab();
+        rGrab = pMovement.GetRightGrab();
+        lGrab = pMovement.GetLeftGrab();
 
-        anim.SetBool("rGrab", pMovement.GetRightGrab());
-        anim.SetBool("lGrab", pMovement.GetLeftGrab());
+        anim.SetBool("rGrab", rGrab);
+        anim.SetBool("lGrab", lGrab);
+        
+        int r = rGrab ? 1 : 0;
+        int l = lGrab ? 1 : 0;
+
+        //anim.SetLayerWeight(anim.GetLayerIndex("RightHand"), r);
+        //anim.SetLayerWeight(anim.GetLayerIndex("LeftHand"), l);
+
+
+
     }
 }

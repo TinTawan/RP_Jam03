@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     bool rightHandUp, leftHandUp;
 
     ConfigurableJoint[] bodyJoints;
-    [SerializeField] float SlerpDrive = 4000f;
-    bool ragdoll = false;
+    [SerializeField] float slerpDrive = 4000f;
+    [SerializeField] bool ragdoll = true;
 
 
     private void Awake()
@@ -100,14 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        if (ragdoll)
-        {
-            RagdollPlayer();
-        }
-        else
-        {
-
-        }
+        //SetRagdollPlayer(ragdoll);
     }
 
     void Move()
@@ -151,16 +144,23 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawLine(transform.position, end, Color.red);
     }
 
-    void RagdollPlayer()
+    void SetRagdollPlayer(bool isRagdoll)
     {
-        stabiliser.SetActivateForce(false);
+        if (isRagdoll)
+        {
+            stabiliser.SetActivateForce(false);
+            SetSlerpDrive(0);
+        }
+        else
+        {
+            stabiliser.SetActivateForce(true);
+            SetSlerpDrive(slerpDrive);
+        }
         
     }
 
     void SetSlerpDrive(float inVal)
     {
-        
-
         foreach(ConfigurableJoint cj in bodyJoints)
         {
             JointDrive drive = new JointDrive();
