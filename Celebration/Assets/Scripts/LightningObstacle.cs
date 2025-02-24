@@ -36,24 +36,13 @@ public class LightningObstacle : MonoBehaviour
     {
         dangerRed.color = Color.Lerp(dangerRed.color, Color.red, Time.deltaTime * strikeTimer);
 
-        /*float alpha = dangerRed.color.a;
-        alpha = Mathf.Lerp(alpha, 1, Time.deltaTime * strikeTimer);
-        dangerRed.color = new(255, 0, 0, alpha);*/
 
-        if(dangerRed.color == Color.red)
+        if(dangerRed.color.a == 225)
         {
             Debug.Log("STRIKE");
             StartCoroutine(Strike());
         }
     }
-
-    /*void Strike()
-    {
-        lightningPS.Play();
-        areaCol.enabled = true;
-
-        strike = false;
-    }*/
 
     IEnumerator Strike()
     {
