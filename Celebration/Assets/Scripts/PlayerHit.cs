@@ -43,7 +43,7 @@ public class PlayerHit : MonoBehaviour
 
         rb.AddForce(Vector3.up * impulseForce, ForceMode.VelocityChange);
         pMovement.SetPlayerRagdoll(true);
-        pMovement.SetGrabbing(false);
+        //pMovement.SetGrabbing(false);
 
         yield return new WaitForSeconds(ragdollTime);
 

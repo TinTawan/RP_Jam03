@@ -162,11 +162,15 @@ public class PlayerMovement : MonoBehaviour
         {
             stabiliser.SetActivateForce(false);
             SetSlerpDrive(slerpDriveMin);
+
+            SetGrabbing(false);
         }
         else
         {
             stabiliser.SetActivateForce(true);
             SetSlerpDrive(slerpDriveMax);
+
+            //SetGrabbing(true);
         }
         
     }
