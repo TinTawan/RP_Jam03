@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        SetRagdollPlayer(ragdoll);
+        PlayerRagdoll(ragdoll);
     }
 
     void Move()
@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void SetRagdollPlayer(bool isRagdoll)
+    void PlayerRagdoll(bool isRagdoll)
     {
         if (isRagdoll)
         {
@@ -171,6 +171,13 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    public void SetPlayerRagdoll(bool inBool)
+    {
+        ragdoll = inBool;
+    }
+
+
+
     void SetSlerpDrive(float inVal)
     {
         foreach(ConfigurableJoint cj in bodyJoints)
@@ -183,6 +190,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void SetGrabbing(bool inBool)
+    {
+        rightHandUp = inBool;
+        leftHandUp = inBool;
+    }
 
     public Vector2 GetMoveVect()
     {
