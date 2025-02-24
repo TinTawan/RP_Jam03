@@ -11,6 +11,9 @@ public class LightningObstacle : MonoBehaviour
     [SerializeField] float strikeTimer = 5f;
     [SerializeField] bool strike;
 
+    float timer;
+
+
     private void Start()
     {
         areaCol = GetComponent<SphereCollider>();
@@ -21,7 +24,9 @@ public class LightningObstacle : MonoBehaviour
         lightningPS.Stop();
         dangerRed.color = Color.clear;
 
-        strike = false;
+        strike = true;
+
+        timer = Random.Range(8, 14);
     }
 
     private void Update()
@@ -30,6 +35,10 @@ public class LightningObstacle : MonoBehaviour
         {
             LerpToRed();
         }
+        else
+        {
+            RandomiseStrike();
+        }
     }
 
     void LerpToRed()
@@ -37,7 +46,7 @@ public class LightningObstacle : MonoBehaviour
         dangerRed.color = Color.Lerp(dangerRed.color, Color.red, Time.deltaTime * strikeTimer);
 
 
-        if(dangerRed.color.a == 225)
+        if(dangerRed.color == Color.red)
         {
             Debug.Log("STRIKE");
             StartCoroutine(Strike());
@@ -57,5 +66,19 @@ public class LightningObstacle : MonoBehaviour
         dangerRed.color = Color.clear;
         lightningPS.Stop();
         areaCol.enabled = false;
+    }
+
+    void RandomiseStrike()
+    {
+        if(timer <= 0)
+        {
+            strike = true;
+            timer = Random.Range(10, 20);
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+
+        }
     }
 }
