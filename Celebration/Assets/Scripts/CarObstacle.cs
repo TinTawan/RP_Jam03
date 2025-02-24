@@ -9,11 +9,18 @@ public class CarObstacle : MonoBehaviour
 
     [SerializeField] float moveTime = 2f;
 
+    Material carMat;
+
     Transform movePos;
 
     private void Start()
     {
         movePos = points[0];
+
+        carMat = GetComponentInChildren<MeshRenderer>().materials[0];
+
+        Color col = Random.ColorHSV();
+        carMat.color = col;
     }
 
 
