@@ -7,7 +7,10 @@ public class PlayerHit : MonoBehaviour
     PlayerMovement pMovement;
     Rigidbody rb;
 
-    [SerializeField] float impulseForce = 50f, ragdollTime = 1f;
+    [SerializeField] float impulseForceMin = 50f, impulseForceMax = 200f;
+    [SerializeField] float rTimeMin = 0.5f, rTimeMax = 5f;
+
+    float impulse = 75f, ragTime = 1f;
 
     bool hit;
 
@@ -40,14 +43,28 @@ public class PlayerHit : MonoBehaviour
     IEnumerator HitByObstacle()
     {
         hit = false;
+        SetRagdollLengthImpulse();
 
-        rb.AddForce(Vector3.up * impulseForce, ForceMode.VelocityChange);
+        rb.AddForce(Vector3.up * impulse, ForceMode.VelocityChange);
         pMovement.SetPlayerRagdoll(true);
-        //pMovement.SetGrabbing(false);
 
-        yield return new WaitForSeconds(ragdollTime);
+        yield return new WaitForSeconds(ragTime + 1f);
 
         pMovement.SetPlayerRagdoll(false);
 
     }
+
+    void SetRagdollLengthImpulse()
+    {
+        ragTime = Random.Range(rTimeMin, rTimeMax);
+        Debug.Log($"Ragdoll Time: {ragTime}");
+
+        float interp = Mathf.InverseLerp(rTimeMin, rTimeMax, ragTime);
+        impulse = Mathf.Lerp(impulseForceMin, impulseForceMax, interp);
+
+        //impulse = interp * (impulseForceMax - impulseForceMin);
+
+        Debug.Log($"Impulse Val: {impulse}");
+    }
+
 }
