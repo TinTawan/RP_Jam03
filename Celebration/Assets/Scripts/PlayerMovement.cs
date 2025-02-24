@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        SetRagdollPlayer(ragdoll);
+        PlayerRagdoll(ragdoll);
     }
 
     void Move()
@@ -156,20 +156,31 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void SetRagdollPlayer(bool isRagdoll)
+    void PlayerRagdoll(bool isRagdoll)
     {
         if (isRagdoll)
         {
             stabiliser.SetActivateForce(false);
             SetSlerpDrive(slerpDriveMin);
+
+            SetGrabbing(false);
         }
         else
         {
             stabiliser.SetActivateForce(true);
             SetSlerpDrive(slerpDriveMax);
+
+            //SetGrabbing(true);
         }
         
     }
+
+    public void SetPlayerRagdoll(bool inBool)
+    {
+        ragdoll = inBool;
+    }
+
+
 
     void SetSlerpDrive(float inVal)
     {
@@ -183,6 +194,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void SetGrabbing(bool inBool)
+    {
+        rightHandUp = inBool;
+        leftHandUp = inBool;
+    }
 
     public Vector2 GetMoveVect()
     {
