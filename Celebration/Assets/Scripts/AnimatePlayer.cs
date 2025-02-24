@@ -41,11 +41,7 @@ public class AnimatePlayer : MonoBehaviour
         anim.SetBool("rGrab", rGrab);
         anim.SetBool("lGrab", lGrab);
         
-        int r = rGrab ? 1 : 0;
-        int l = lGrab ? 1 : 0;
 
-        //anim.SetLayerWeight(anim.GetLayerIndex("RightHand"), r);
-        //anim.SetLayerWeight(anim.GetLayerIndex("LeftHand"), l);
 
 
 

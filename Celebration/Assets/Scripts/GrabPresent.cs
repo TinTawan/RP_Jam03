@@ -23,7 +23,7 @@ public class GrabPresent : MonoBehaviour
     {
         if (player.GetRightGrab() || player.GetLeftGrab())
         {
-            if (canGrab)
+            if (canGrab && present != null)
             {
                 FixedJoint handJoint = present.AddComponent<FixedJoint>();
                 handJoint.connectedBody = rb;

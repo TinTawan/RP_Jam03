@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     bool rightHandUp, leftHandUp;
 
     ConfigurableJoint[] bodyJoints;
-    [SerializeField] float slerpDrive = 4000f;
-    [SerializeField] bool ragdoll = true;
+    [SerializeField] float slerpDriveMax = 4000f, slerpDriveMin = 100f;
+    [SerializeField] bool ragdoll = false;
 
 
     private void Awake()
@@ -78,7 +78,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move_performed(InputAction.CallbackContext ctx)
     {
-        moveVect = ctx.ReadValue<Vector2>();
+        if (!ragdoll)
+        {
+            moveVect = ctx.ReadValue<Vector2>();
+
+        }
     }
     private void Move_canceled(InputAction.CallbackContext ctx)
     {
@@ -100,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        //SetRagdollPlayer(ragdoll);
+        SetRagdollPlayer(ragdoll);
     }
 
     void Move()
@@ -129,19 +133,27 @@ public class PlayerMovement : MonoBehaviour
 
     void GroundCheck()
     {
-        if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit lineHit, groundCheckDist, groundLayer))
+        if (!ragdoll)
         {
-            isGrounded = true;
-            stabiliser.SetActivateForce(true);
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit lineHit, groundCheckDist, groundLayer))
+            {
+                isGrounded = true;
+                stabiliser.SetActivateForce(true);
+            }
+            else
+            {
+                isGrounded = false;
+                stabiliser.SetActivateForce(false);
+
+            }
+            Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
+            Debug.DrawLine(transform.position, end, Color.red);
         }
         else
         {
             isGrounded = false;
-            stabiliser.SetActivateForce(false);
-
         }
-        Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
-        Debug.DrawLine(transform.position, end, Color.red);
+        
     }
 
     void SetRagdollPlayer(bool isRagdoll)
@@ -149,12 +161,12 @@ public class PlayerMovement : MonoBehaviour
         if (isRagdoll)
         {
             stabiliser.SetActivateForce(false);
-            SetSlerpDrive(0);
+            SetSlerpDrive(slerpDriveMin);
         }
         else
         {
             stabiliser.SetActivateForce(true);
-            SetSlerpDrive(slerpDrive);
+            SetSlerpDrive(slerpDriveMax);
         }
         
     }
@@ -163,9 +175,10 @@ public class PlayerMovement : MonoBehaviour
     {
         foreach(ConfigurableJoint cj in bodyJoints)
         {
-            JointDrive drive = new JointDrive();
-            cj.slerpDrive = drive;
+            JointDrive drive = cj.slerpDrive;
             drive.positionSpring = inVal;
+            cj.slerpDrive = drive;
+
         }
 
     }

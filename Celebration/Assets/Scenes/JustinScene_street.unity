@@ -778,6 +778,16 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: be4e381ff403628458507fc4122ef2d9, type: 3}
+    - target: {fileID: 8168536719713112208, guid: 795430742adc95e44b99400541d20aab,
+        type: 3}
+      propertyPath: ragdoll
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168536719713112208, guid: 795430742adc95e44b99400541d20aab,
+        type: 3}
+      propertyPath: slerpDriveMin
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 8556754225688541933, guid: 795430742adc95e44b99400541d20aab,
         type: 3}
       propertyPath: m_Name
