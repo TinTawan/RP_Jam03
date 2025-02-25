@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PresentHealth : MonoBehaviour
 {
@@ -9,11 +11,16 @@ public class PresentHealth : MonoBehaviour
     GrabPresent grabPresent;
 
     [SerializeField] int health = 8;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] float canvasRotSmoothing = 5f;
+
 
 
     private void Start()
     {
         presentAnim = GetComponent<PresentAnim>();
+        healthSlider.maxValue = health;
+
     }
 
     private void Update()
@@ -35,6 +42,25 @@ public class PresentHealth : MonoBehaviour
         {
             Debug.Log("LOSE");
         }
+        else
+        {
+            healthSlider.value = health;
+
+            if(pMovement != null)
+            {
+                Canvas canvas = healthSlider.GetComponentInParent<Canvas>();
+
+                Vector3 look = (canvas.transform.position - Camera.main.transform.position).normalized;
+                Quaternion rot = Quaternion.LookRotation(look);
+                Quaternion faceCam = Quaternion.Slerp(canvas.transform.rotation, rot, canvasRotSmoothing * Time.deltaTime);
+
+                Vector3 yRot = new(0, faceCam.eulerAngles.y, 0);
+
+                canvas.transform.rotation = Quaternion.Euler(yRot);
+            }
+            
+        }
+
 
 
 
