@@ -12,6 +12,8 @@ public class GrabPresent : MonoBehaviour
 
     bool canGrab;
 
+    bool held;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,6 +32,8 @@ public class GrabPresent : MonoBehaviour
                 handJoint.breakForce = breakForce;
 
                 canGrab = false;
+
+                held = true;
             }
             
 
@@ -70,5 +74,14 @@ public class GrabPresent : MonoBehaviour
 
         }
 
+    }
+
+    public bool GetHeld()
+    {
+        return held;
+    }
+    public void SetHeld(bool inBool)
+    {
+        held = inBool;
     }
 }

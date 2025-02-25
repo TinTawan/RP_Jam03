@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float slerpDriveMax = 4000f, slerpDriveMin = 100f;
     [SerializeField] bool ragdoll = false;
 
+    GrabPresent grabPres;
+    bool droppedPresent;
+
 
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         rootJoint = GetComponent<ConfigurableJoint>();
         stabiliser = GetComponentInChildren<RagdollStabiliser>();
         bodyJoints = GetComponentsInChildren<ConfigurableJoint>();
+        grabPres = GetComponentInChildren<GrabPresent>();
 
         cam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
@@ -120,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             Quaternion rot = Quaternion.Euler(0, cam.eulerAngles.y + 90, 0);
             Quaternion inv = Quaternion.Inverse(rot);
 
-            Quaternion lerp = Quaternion.Lerp(transform.rotation, inv, Time.fixedDeltaTime * rotateSmooth);
+            //Quaternion lerp = Quaternion.Lerp(transform.rotation, inv, Time.fixedDeltaTime * rotateSmooth);
 
             //rb.MoveRotation(lerp);
             rootJoint.targetRotation = inv;
@@ -212,6 +216,11 @@ public class PlayerMovement : MonoBehaviour
     public bool GetLeftGrab()
     {
         return leftHandUp;
+    }
+
+    public bool GetDropped()
+    {
+        return ragdoll && grabPres.GetHeld();
     }
 
 

@@ -10,7 +10,7 @@ public class PresentAnim : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetInteger("State", 1);
+        SetState(1);
 
         presentMat = GetComponent<MeshRenderer>().materials[0];
 
@@ -19,8 +19,8 @@ public class PresentAnim : MonoBehaviour
         presentMat.color = col;
     }
 
-    public void SetState(int inInt)
+    public void SetState(float inVal)
     {
-        anim.SetInteger("State", inInt);
+        anim.SetFloat("state", inVal);
     }
 }

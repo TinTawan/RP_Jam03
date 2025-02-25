@@ -49,7 +49,7 @@ public class LightningObstacle : MonoBehaviour
 
         if(dangerRed.color == Color.red)
         {
-            Debug.Log("STRIKE");
+            //Debug.Log("STRIKE");
             StartCoroutine(Strike());
         }
     }
@@ -62,7 +62,7 @@ public class LightningObstacle : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        Debug.Log("stop strike");
+        //Debug.Log("stop strike");
 
         dangerRed.color = Color.clear;
         lightningPS.Stop();
