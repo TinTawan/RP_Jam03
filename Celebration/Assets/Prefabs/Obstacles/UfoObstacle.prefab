@@ -4951,7 +4951,7 @@ GameObject:
   - component: {fileID: 5141480451089626451}
   - component: {fileID: 2065310033740941388}
   - component: {fileID: 1605760413676389473}
-  - component: {fileID: 8992255444622454994}
+  - component: {fileID: 2827418897898663490}
   m_Layer: 0
   m_Name: UfoObstacle
   m_TagString: Untagged
@@ -5017,8 +5017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatForce: 10
   floatTime: 3
---- !u!65 &8992255444622454994
-BoxCollider:
+--- !u!135 &2827418897898663490
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5036,5 +5036,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8606155, y: 1.2503942, z: 4.123307}
-  m_Center: {x: 0, y: 7.468942, z: 0}
+  m_Radius: 0.9315807
+  m_Center: {x: 0, y: 7.3568773, z: 0}

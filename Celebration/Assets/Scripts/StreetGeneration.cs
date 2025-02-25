@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StreetGeneration : MonoBehaviour
 {
-    [SerializeField] GameObject[] streetChunks; //0 = forward road, 1 = cross road
+    [SerializeField] GameObject[] streetChunks; //0 = cross road, 1+ = forward road
     [SerializeField] GameObject streetEnd;
     [SerializeField] Transform startPos;
     [Tooltip("Number of chunks to spawn")] [SerializeField] int streetLength;
@@ -36,11 +36,14 @@ public class StreetGeneration : MonoBehaviour
         //more chance for forward road than cross road
         if(Random.Range(0,100) > chanceForCR)
         {
-            return streetChunks[0];
+            //choose random forward road
+            int randChunk = Random.Range(1, streetChunks.Length);
+            return streetChunks[randChunk];
         }
         else
         {
-            return streetChunks[1];
+            //cross road
+            return streetChunks[0];
         }
 
     }
