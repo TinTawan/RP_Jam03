@@ -13,14 +13,14 @@ public class ObstacleRandomiser : MonoBehaviour
 
     private void Start()
     {
-        spawnCount = Random.Range(0, spawnCount);
+        spawnCount = Random.Range(0, possibleSpawnLocations.Length);
 
         SpawnObstacles();
     }
 
     void SpawnObstacles()
     {
-        for (int i = 0; i < possibleSpawnLocations.Length; i++)
+        for (int i = 0; i < spawnCount; i++)
         {
             Instantiate(obstacles[Random.Range(0,obstacles.Length)], RandPos(possibleSpawnLocations[i].position, positionDelta), RandYRot(Quaternion.identity, rotationDelta), possibleSpawnLocations[i]);
 
