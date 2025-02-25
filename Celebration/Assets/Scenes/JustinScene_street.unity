@@ -1810,6 +1810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UfoObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8607849637793437686, guid: 5ec516e1580c47f41a20d12dc6bec729,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1827,6 +1832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BarrierObstacle_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707651474556852169, guid: d0e1b1e639804094d8b3c1a4c8dcd930,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3728245469711306165, guid: d0e1b1e639804094d8b3c1a4c8dcd930,
         type: 3}
@@ -2115,6 +2125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OilObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7515444713331146302, guid: 9ccc78c5c56b8f74ab18552f1d691a7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2182,6 +2197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BarrierObstacle_W
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620774184870923809, guid: edcab034f8f770d43bee16a752fdff05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2365,6 +2385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BananaObstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 967929593457491493, guid: 07f3fa18171e4d345987437fd75f70c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1889642545465471126, guid: 07f3fa18171e4d345987437fd75f70c2,
         type: 3}
@@ -2833,6 +2858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StopObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 1629700890586108774, guid: ef60ca40ef4abb34094c759af0964fce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3747623279900701825, guid: ef60ca40ef4abb34094c759af0964fce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2994,6 +3024,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8821127138935670418, guid: 03cbbc42867ad44499bd6a40cd9e580e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3062,6 +3097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightningObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7536219499814872530, guid: 558e7fc193097d0419928b9ab8df4c7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3099,7 +3139,7 @@ PrefabInstance:
     - target: {fileID: 2220872957651145070, guid: 78b1ab17c59eb4747bff0896e89be994,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2220872957651145070, guid: 78b1ab17c59eb4747bff0896e89be994,
         type: 3}

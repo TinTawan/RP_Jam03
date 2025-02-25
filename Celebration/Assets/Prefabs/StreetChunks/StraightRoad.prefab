@@ -318,6 +318,8 @@ MonoBehaviour:
   - {fileID: 7515444713331146302, guid: 9ccc78c5c56b8f74ab18552f1d691a7a, type: 3}
   - {fileID: 1629700890586108774, guid: ef60ca40ef4abb34094c759af0964fce, type: 3}
   - {fileID: 8607849637793437686, guid: 5ec516e1580c47f41a20d12dc6bec729, type: 3}
+  positionDelta: 2
+  rotationDelta: 90
 --- !u!1001 &7142581753522993881
 PrefabInstance:
   m_ObjectHideFlags: 0
