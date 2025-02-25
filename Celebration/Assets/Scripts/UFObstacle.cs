@@ -28,7 +28,7 @@ public class UFObstacle : MonoBehaviour
         {
             inside = true;
 
-            if(col.TryGetComponent(out PlayerMovement pm))
+            if (col.TryGetComponent(out PlayerMovement pm))
             {
                 pMove = pm;
             }
