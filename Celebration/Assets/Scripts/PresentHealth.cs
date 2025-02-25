@@ -6,6 +6,7 @@ public class PresentHealth : MonoBehaviour
 {
     PlayerMovement pMovement;
     PresentAnim presentAnim;
+    GrabPresent grabPresent;
 
     [SerializeField] int health = 8;
 
@@ -26,10 +27,30 @@ public class PresentHealth : MonoBehaviour
                 GameObject go = fj.connectedBody.gameObject;
 
                 pMovement = go.GetComponentInParent<PlayerMovement>();
+                grabPresent = fj.connectedBody.GetComponent<GrabPresent>();
             }
         }
 
+        if(health <= 0)
+        {
+            Debug.Log("LOSE");
+        }
 
+
+
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(pMovement != null)
+        {
+            if (col.gameObject.CompareTag("Ground") && pMovement.GetDropped())
+            {
+                grabPresent.SetHeld(false);
+                health--;
+            }
+        }
+        
     }
 
 
