@@ -130,7 +130,14 @@ public class PlayerMovement : MonoBehaviour
             rootJoint.targetRotation = inv;
 
 
-            rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);   
+            rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);
+
+            stabiliser.SetForceVal(7250f);
+        }
+        else
+        {
+            stabiliser.SetForceVal(6000f);
+
         }
     }
 
