@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GameUI : MonoBehaviour
 {
     PlayerControls pControls;
     Animator anim;
 
+    [SerializeField] Button pauseButton;
     [SerializeField] PresentHealth presHealth;
     [SerializeField] Image presImage;
 
     [SerializeField] GameObject pauseMenu;
     bool isPaused;
+
 
     private void Start()
     {
@@ -80,6 +83,8 @@ public class GameUI : MonoBehaviour
 
     public void Pause()
     {
+        EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
+
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
 
