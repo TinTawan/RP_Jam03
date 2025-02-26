@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class CustomisationSelect : MonoBehaviour
@@ -13,6 +15,7 @@ public class CustomisationSelect : MonoBehaviour
 
     private int currentSlide;
 
+    EventSystem eventSystem;
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class CustomisationSelect : MonoBehaviour
         }
 
         slides[currentSlide].SetActive(true);
+
     }
 
     /*private void OnEnable()
@@ -69,6 +73,18 @@ public class CustomisationSelect : MonoBehaviour
 
         }*/
 
+
+        if (!EventSystem.current.currentSelectedGameObject.activeSelf)
+        {
+            if (!buttons[0].activeSelf)
+            {
+                buttons[1].GetComponent<Button>().Select();
+            }
+            if (!buttons[1].activeSelf)
+            {
+                buttons[0].GetComponent<Button>().Select();
+            }
+        }
     }
 
     public void LeftButton()
@@ -97,6 +113,7 @@ public class CustomisationSelect : MonoBehaviour
         //FindObjectOfType<SoundManager>().PlaySound(SoundManager.soundType.buttonPress, transform.position, 1f);
 
     }
+
 
 
 }
