@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4936181951195429097}
   - component: {fileID: 1085018855483089395}
   - component: {fileID: 4968103669116232600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrice Houses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
