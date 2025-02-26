@@ -20,7 +20,7 @@ public class ObstacleRandomiser : MonoBehaviour
 
     void SpawnObstacles()
     {
-        for (int i = 0; i < spawnCount; i++)
+        for (int i = 1; i < spawnCount; i++)
         {
             Instantiate(obstacles[Random.Range(0,obstacles.Length)], RandPos(possibleSpawnLocations[i].position, positionDelta), RandYRot(Quaternion.identity, rotationDelta), possibleSpawnLocations[i]);
 

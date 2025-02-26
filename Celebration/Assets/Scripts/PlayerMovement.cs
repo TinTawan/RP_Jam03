@@ -54,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         pControls.General.RightGrab.canceled += RightGrab_canceled;
         pControls.General.LeftGrab.performed += LeftGrab_performed;
         pControls.General.LeftGrab.canceled += LeftGrab_canceled;
+
     }
+
 
     private void LeftGrab_canceled(InputAction.CallbackContext ctx)
     {

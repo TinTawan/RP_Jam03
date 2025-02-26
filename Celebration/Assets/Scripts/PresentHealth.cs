@@ -99,4 +99,9 @@ public class PresentHealth : MonoBehaviour
             presentAnim.SetState(4);
         }
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
 }
