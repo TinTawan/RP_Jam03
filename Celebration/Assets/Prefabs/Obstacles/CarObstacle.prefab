@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6945878001205081020}
   - component: {fileID: 5210854895757223175}
   - component: {fileID: 1778478557975836393}
+  - component: {fileID: 1478872050537333359}
   m_Layer: 0
   m_Name: CarModel
   m_TagString: Obstacle
@@ -139,6 +140,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019976586, y: 0.024049193, z: 0.007211158}
   m_Center: {x: 0.0021482229, y: 0, z: 0.009249741}
+--- !u!114 &1478872050537333359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677193923185034588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9a8ee1f85c61844b975b0f9b4deb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourIndex: 0
 --- !u!1 &3294024616967864195
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,4 +326,5 @@ MonoBehaviour:
   points:
   - {fileID: 3234107196410796823}
   - {fileID: 5012477611770482513}
-  moveTime: 0.7
+  carSpeedMin: 0.5
+  carSpeedMax: 1.2

@@ -10,18 +10,12 @@ public class CarObstacle : MonoBehaviour
     float moveTime = 2f;
     [SerializeField] float carSpeedMin = 0.5f, carSpeedMax = 1.2f;
 
-    Material carMat;
 
     Transform movePos;
 
     private void Start()
     {
         movePos = points[0];
-
-        carMat = GetComponentInChildren<MeshRenderer>().materials[0];
-
-        Color col = Random.ColorHSV();
-        carMat.color = col;
 
         moveTime = Random.Range(carSpeedMin, carSpeedMax);
     }
