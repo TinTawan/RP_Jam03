@@ -54,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         pControls.General.RightGrab.canceled += RightGrab_canceled;
         pControls.General.LeftGrab.performed += LeftGrab_performed;
         pControls.General.LeftGrab.canceled += LeftGrab_canceled;
+
     }
+
 
     private void LeftGrab_canceled(InputAction.CallbackContext ctx)
     {
@@ -130,7 +132,14 @@ public class PlayerMovement : MonoBehaviour
             rootJoint.targetRotation = inv;
 
 
-            rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);   
+            rb.AddForce(dir * moveSpeed, ForceMode.Acceleration);
+
+            stabiliser.SetForceVal(7250f);
+        }
+        else
+        {
+            stabiliser.SetForceVal(6000f);
+
         }
     }
 

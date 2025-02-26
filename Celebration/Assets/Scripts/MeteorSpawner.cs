@@ -57,7 +57,7 @@ public class MeteorSpawner : MonoBehaviour
         float x = Random.Range(boxCol.bounds.min.x, boxCol.bounds.max.x);
         float z = Random.Range(boxCol.bounds.min.z, boxCol.bounds.max.z);
 
-        return new(x, transform.position.y, z);
+        return new(x, boxCol.center.y, z);
     }
 
     

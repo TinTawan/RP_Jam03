@@ -25,4 +25,9 @@ public class RagdollStabiliser : MonoBehaviour
         activateForce = inBool;
     }
 
+    public void SetForceVal(float inVal)
+    {
+        forceVal = inVal;
+    }
+
 }
