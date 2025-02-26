@@ -15,8 +15,6 @@ public class CustomisationSelect : MonoBehaviour
 
     private int currentSlide;
 
-    EventSystem eventSystem;
-
     private void Start()
     {
         currentSlide = 0;
