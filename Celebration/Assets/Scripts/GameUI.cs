@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class GameUI : MonoBehaviour
 {
     PlayerControls pControls;
+    Animator anim;
 
     [SerializeField] PresentHealth presHealth;
     [SerializeField] Image presImage;
@@ -22,6 +23,8 @@ public class GameUI : MonoBehaviour
         pControls = new PlayerControls();
         pControls.UI.Enable();
         pControls.UI.Escape.started += Escape_started;
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Escape_started(InputAction.CallbackContext ctx)
@@ -39,7 +42,31 @@ public class GameUI : MonoBehaviour
 
     private void Update()
     {
-        presImage.fillAmount = (float)presHealth.GetHealth()/8;
+        //presImage.fillAmount = (float)presHealth.GetHealth()/8;
+        AnimatePresentUI();
+    }
+
+    void AnimatePresentUI()
+    {
+        if (presHealth.GetHealth() == 7 || presHealth.GetHealth() == 8)
+        {
+            anim.SetFloat("state", 0);
+        }
+        if (presHealth.GetHealth() == 5 || presHealth.GetHealth() == 6)
+        {
+            anim.SetFloat("state", 1);
+
+        }
+        if (presHealth.GetHealth() == 3 || presHealth.GetHealth() == 4)
+        {
+            anim.SetFloat("state", 2);
+
+        }
+        if (presHealth.GetHealth() == 1 || presHealth.GetHealth() == 2)
+        {
+            anim.SetFloat("state", 3);
+
+        }
     }
 
     public void Resume()
