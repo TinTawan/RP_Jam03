@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     GrabPresent grabPres;
 
+    [SerializeField] ParticleSystem landParticle;
+    bool playOnce;
+
 
     private void Awake()
     {
@@ -41,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main.transform;
 
         ragdoll = false;
+        playOnce = true;
     }
 
     private void OnEnable()
@@ -152,12 +156,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 isGrounded = true;
                 stabiliser.SetActivateForce(true);
+
+                if (playOnce)
+                {
+                    landParticle.Play();
+                    playOnce = false;
+                }
             }
             else
             {
                 isGrounded = false;
                 stabiliser.SetActivateForce(false);
 
+                playOnce = true;
             }
             Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
             Debug.DrawLine(transform.position, end, Color.red);
