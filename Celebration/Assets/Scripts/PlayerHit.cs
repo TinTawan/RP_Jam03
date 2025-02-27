@@ -34,6 +34,8 @@ public class PlayerHit : MonoBehaviour
     {
         if (col.CompareTag("Obstacle"))
         {
+            FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.slip, transform.position, 0.25f);
+
             Debug.Log($"Hit by: {col.gameObject.name}");
             hit = true;
         }

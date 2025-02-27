@@ -77,6 +77,9 @@ public class PresentHealth : MonoBehaviour
             {
                 grabPresent.SetHeld(false);
                 health--;
+
+                FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.presentHit, transform.position, 0.25f);
+
             }
         }
         
@@ -105,6 +108,10 @@ public class PresentHealth : MonoBehaviour
 
     IEnumerator Lose()
     {
+        FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.presentBreak, transform.position, 0.25f);
+        FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.sad, transform.position, 0.15f);
+
+
         Time.timeScale = 0.75f;
         lost = true;
 

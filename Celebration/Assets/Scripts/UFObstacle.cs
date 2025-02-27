@@ -36,7 +36,8 @@ public class UFObstacle : MonoBehaviour
             StartCoroutine(FloatPlayer());
 
             playerRbs.Add(col.GetComponent<Rigidbody>());
-            
+
+            FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.alien, transform.position, 0.25f);
         }
     }
     private void OnTriggerExit(Collider col)

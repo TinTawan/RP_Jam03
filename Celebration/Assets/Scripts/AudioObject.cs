@@ -15,7 +15,7 @@ public class AudioObject : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = clip;
         audioSource.volume = vol;
-        audioSource.pitch = pitch;
+        audioSource.pitch = 1f + pitch;
         audioSource.Play();
 
     }
@@ -30,7 +30,7 @@ public class AudioObject : MonoBehaviour
     }
     public void SetPitchDelta(float inDelta)
     {
-        pitch += inDelta;
+        pitch = inDelta;
     }
 
     void Update()

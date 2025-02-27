@@ -32,8 +32,6 @@ public class AudioManager : MonoBehaviour
 
 
 
-
-
     public void PlaySound(soundType type, Vector3 pos/*, float vol*/, float pitchDelta)
     {
         GameObject newSound = Instantiate(audioObject, pos, Quaternion.identity);
