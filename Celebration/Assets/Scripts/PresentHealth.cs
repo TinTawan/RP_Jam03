@@ -17,6 +17,8 @@ public class PresentHealth : MonoBehaviour
 
     [SerializeField] GameObject[] peices;
     bool lost;
+
+    bool doOnce = true;
     private void Start()
     {
         presentAnim = GetComponent<PresentAnim>();
@@ -108,11 +110,16 @@ public class PresentHealth : MonoBehaviour
 
     IEnumerator Lose()
     {
-        FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.presentBreak, transform.position, 0.25f);
-        FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.sad, transform.position, 0.15f);
-
+        if (doOnce)
+        {
+            doOnce = false;
+            FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.presentBreak, transform.position, 0.25f);
+            FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.sad, transform.position, 0.15f);
+        }
+        
 
         Time.timeScale = 0.75f;
+
         lost = true;
 
         //break present apart

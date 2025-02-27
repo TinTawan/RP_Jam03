@@ -263,7 +263,7 @@ MonoBehaviour:
     type: 3}
   startPos: {fileID: 811430454}
   streetLength: 9
-  chanceForCR: 25
+  chanceForCR: 30
 --- !u!114 &196806594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,6 +753,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1791182695672244185, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688727316115466479, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2688727316115466479, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
         type: 3}
       propertyPath: m_IsActive
@@ -768,6 +778,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4240137767703520889, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4833418841147257721, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -782,6 +797,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082043033900254747, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365082308747309920, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5651271335390744586, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
         type: 3}
@@ -888,10 +913,25 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1378744317}
+    - target: {fileID: 8694374766488605534, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8872843693976809924, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
         type: 3}
       propertyPath: m_Name
       value: Present
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872843693976809924, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043996442987086634, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9043996442987086634, guid: 655ce0f019c113e47bbdebeb1c7b4cde,
         type: 3}
@@ -2269,8 +2309,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378744313}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07782475, y: 1.3688845e-15, z: 1.0685719e-16, w: 0.9969671}
-  m_LocalPosition: {x: -30.700005, y: 2.7523699, z: -27.5}
+  m_LocalRotation: {x: 0.15416154, y: 0.60613036, z: -0.12122607, w: 0.7708077}
+  m_LocalPosition: {x: -42.361565, y: 8.75237, z: -18.329845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3746,11 +3786,12 @@ PrefabInstance:
     - target: {fileID: 1678180377129439414, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_text
-      value: "ChalkySinger - Artist\nTawanTin - Programmer\nDavid Renda - ROFL\r\nsoundscalpel.com
-        - Cartoon_siren_whistle_001.wav\r\nSamsterBirdies - Firecracker\r\nFreesound_community
-        - Short Crowd Cheer\r\nFreesound_community - boo\r\nMellau - Button Click
-        1.wav\r\nPixeliota - Mouse Click Sound.mp3\r\nCGEffex - Piano crash.wav\r\nKevinkace
-        - Crate Break 2.wav\r\nCGEffex - Alien Voice3.flac \r\n"
+      value: "ChalkySinger - Artist\nTawanTin - Programmer\nManiackers Design - Darumadrop
+        One\nDavid Renda - ROFL\r\nsoundscalpel.com - Cartoon_siren_whistle_001.wav\r\nSamsterBirdies
+        - Firecracker\r\nFreesound_community - Short Crowd Cheer\r\nFreesound_community
+        - boo\r\nMellau - Button Click 1.wav\r\nPixeliota - Mouse Click Sound.mp3\r\nCGEffex
+        - Piano crash.wav\r\nKevinkace - Crate Break 2.wav\r\nCGEffex - Alien Voice3.flac
+        \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1678180377129439414, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -3790,7 +3831,7 @@ PrefabInstance:
     - target: {fileID: 1678180377129439414, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_VerticalAlignment
-      value: 256
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 1678180377129439414, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -5907,6 +5948,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1024867997}
+    - target: {fileID: 3796837667195975426, guid: 637e90006e382584aab7ca2cbe1abf1f,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3861814535643174743, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_Delegates.Array.size
@@ -8315,7 +8361,7 @@ PrefabInstance:
     - target: {fileID: 8500927902784773370, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 92
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 8543987465528017220, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -9605,7 +9651,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.01131141, z: -9.313227e-10}
+  m_ConnectedAnchor: {x: 0, y: 0.011311411, z: 0.0000000037252907}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -10313,7 +10359,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.875249, y: 3.7523699, z: -7.227}
+  m_ConnectedAnchor: {x: -30.700005, y: 3.7523699, z: -15.5}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -10512,7 +10558,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.0034145475, z: 0.00043361727}
+  m_ConnectedAnchor: {x: 0, y: 0.003414552, z: 0.00043361867}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -10692,7 +10738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137110738441063098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.041558646, y: 0, z: 0, w: 0.9991361}
+  m_LocalRotation: {x: 0.15416151, y: 0.6061305, z: -0.12122608, w: 0.7708076}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10729,7 +10775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -1, z: -12}
+  m_FollowOffset: {x: 0, y: 5, z: -12}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -10749,7 +10795,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 76.36
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -10834,7 +10880,7 @@ GameObject:
   - component: {fileID: 3691657012027900294}
   - component: {fileID: 3691657012027900293}
   - component: {fileID: 3691657012027900295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PresentState4.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10882,7 +10928,7 @@ Transform:
   m_GameObject: {fileID: 1862658311082323005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.700005, y: 2.7523699, z: -27.5}
+  m_LocalPosition: {x: -42.361565, y: 8.75237, z: -18.329845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10959,7 +11005,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.008616502, z: 9.3132246e-10}
+  m_ConnectedAnchor: {x: 0, y: 0.008616511, z: 0.0000000037252899}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -11184,7 +11230,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5.2386895e-10, y: 0.008637581, z: -2.3283064e-10}
+  m_ConnectedAnchor: {x: -0.000000008876668, y: 0.008637581, z: -0.0000000020372681}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -11784,7 +11830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908142441956157990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.059725545, y: 0, z: 0, w: 0.99821484}
+  m_LocalRotation: {x: 0.14011541, y: 0.60823524, z: -0.110180825, w: 0.77348423}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11846,7 +11892,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0
+    Value: 1.68
     m_SpeedMode: 0
     m_MaxSpeed: 1.5
     m_AccelTime: 0.2
@@ -11870,7 +11916,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 76.36
     m_SpeedMode: 0
     m_MaxSpeed: 200
     m_AccelTime: 0.1
@@ -12318,7 +12364,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5.384209e-10, y: 0.0084542865, z: 9.313226e-10}
+  m_ConnectedAnchor: {x: -0.00000000880391, y: 0.0084542865, z: -9.313226e-10}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -13099,7 +13145,7 @@ GameObject:
   - component: {fileID: 4264759112230884256}
   - component: {fileID: 4264759112230884255}
   - component: {fileID: 4264759112230884257}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PresentState4.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13179,7 +13225,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.0084478455, z: 0.0000000015716068}
+  m_ConnectedAnchor: {x: 0, y: 0.008447855, z: 0.0000000047148205}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -13387,7 +13433,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.005, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.008120967, z: -0.0046334895}
+  m_ConnectedAnchor: {x: 0, y: 0.008120967, z: -0.004633494}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -13862,7 +13908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -1, z: -12}
+  m_FollowOffset: {x: 0, y: 5, z: -12}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -13882,7 +13928,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 76.36
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -13921,7 +13967,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.005, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00013645172, y: 0.0083662765, z: 0.0047235927}
+  m_ConnectedAnchor: {x: -0.00013645172, y: 0.0083662765, z: 0.004723588}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -14831,7 +14877,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0013654041, y: 0.007481471, z: -0.000017020859}
+  m_ConnectedAnchor: {x: 0.0013653946, y: 0.007481471, z: -0.000017020859}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -15231,7 +15277,7 @@ GameObject:
   - component: {fileID: 7748801453142792262}
   - component: {fileID: 7748801453142792261}
   - component: {fileID: 7748801453142792263}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PresentState4.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15394,7 +15440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -1, z: -12}
+  m_FollowOffset: {x: 0, y: 5, z: -12}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -15414,7 +15460,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 76.36
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -15449,7 +15495,7 @@ GameObject:
   - component: {fileID: 7037499783423904406}
   - component: {fileID: 7037499783423904405}
   - component: {fileID: 7037499783423904407}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PresentState4.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15635,7 +15681,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.8356855e-10, y: 0.0037110483, z: -0.00038497103}
+  m_ConnectedAnchor: {x: -1.8356783e-10, y: 0.0037110436, z: -0.00038496964}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -15950,7 +15996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268412372562687835}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07782479, y: 0, z: 0, w: 0.9969671}
+  m_LocalRotation: {x: 0.12606023, y: 0.61013395, z: -0.099128425, w: 0.7758988}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16159,7 +16205,7 @@ GameObject:
   - component: {fileID: 8273101489421044341}
   - component: {fileID: 8273101489421044340}
   - component: {fileID: 8273101489421044342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PresentState4.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

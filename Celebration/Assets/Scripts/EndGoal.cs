@@ -37,10 +37,10 @@ public class EndGoal : MonoBehaviour
 
     IEnumerator Win()
     {
-        FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.winCheer, transform.position, 0f);
 
         if (doOnce)
         {
+            FindObjectOfType<AudioManager>().PlaySound(AudioManager.soundType.winCheer, transform.position, 0f);
             //Instantiate(confettiPS, transform.position, Quaternion.identity, transform);
             foreach(ParticleSystem ps in confettiPS)
             {
