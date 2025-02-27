@@ -3791,7 +3791,7 @@ PrefabInstance:
         - Firecracker\r\nFreesound_community - Short Crowd Cheer\r\nFreesound_community
         - boo\r\nMellau - Button Click 1.wav\r\nPixeliota - Mouse Click Sound.mp3\r\nCGEffex
         - Piano crash.wav\r\nKevinkace - Crate Break 2.wav\r\nCGEffex - Alien Voice3.flac
-        \r\n"
+        \r\nYuki2022 - Free Stylized Skybox"
       objectReference: {fileID: 0}
     - target: {fileID: 1678180377129439414, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -4032,6 +4032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912892368452048894, guid: 637e90006e382584aab7ca2cbe1abf1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 376
       objectReference: {fileID: 0}
     - target: {fileID: 2007763808506218053, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -6533,10 +6538,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5575391404713812684, guid: 637e90006e382584aab7ca2cbe1abf1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -320
+      objectReference: {fileID: 0}
     - target: {fileID: 5760401324982817631, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5879639854772101383, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
@@ -8376,7 +8386,7 @@ PrefabInstance:
     - target: {fileID: 8500927902784773370, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 95
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 8543987465528017220, guid: 637e90006e382584aab7ca2cbe1abf1f,
         type: 3}
