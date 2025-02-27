@@ -5,8 +5,9 @@ using UnityEngine;
 public class EndGoal : MonoBehaviour
 {
     PlayerMovement pMovement;
-    bool playerIn, presentIn, won;
+    bool playerIn, presentIn, won, doOnce = true;
 
+    [SerializeField] ParticleSystem[] confettiPS;
     private void Start()
     {
         pMovement = FindObjectOfType<PlayerMovement>();
@@ -36,21 +37,29 @@ public class EndGoal : MonoBehaviour
 
     IEnumerator Win()
     {
-        //Debug.Log("WIN");
+        if (doOnce)
+        {
+            //Instantiate(confettiPS, transform.position, Quaternion.identity, transform);
+            foreach(ParticleSystem ps in confettiPS)
+            {
+                ps.Play();
+            }
+            doOnce = false;
+        }
+
         Time.timeScale = 0.75f;
 
         won = true;
 
         //stop player movement 
-        if(pMovement != null)
+        if (pMovement != null)
         {
             pMovement.StopInputs();
 
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return null;
 
-        //show win screen
     }
     public bool GetWon()
     {

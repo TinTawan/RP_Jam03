@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HarryScene.unity
-    guid: e3dbddf9e6361d54ebd4675ab252c3b1
-  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 1e8d5c0e38da31a4ca767fcc16aab56b
   m_configObjects: {}
