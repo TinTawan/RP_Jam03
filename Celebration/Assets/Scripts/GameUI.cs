@@ -19,6 +19,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject pauseMenu, winMenu;
     bool isPaused, doOnce;
 
+    [SerializeField] GameObject pauseSectionPause, pauseSectionSettings;
+
 
     private void Start()
     {
@@ -171,6 +173,18 @@ public class GameUI : MonoBehaviour
 
         pControls.UI.Escape.Disable();
 
+    }
+
+    public void PauseSectionPause()
+    {
+        pauseSectionPause.SetActive(true);
+        pauseSectionSettings.SetActive(false);
+
+    }
+    public void PauseSectionSettings()
+    {
+        pauseSectionPause.SetActive(false);
+        pauseSectionSettings.SetActive(true);
     }
 
     private void OnDisable()
