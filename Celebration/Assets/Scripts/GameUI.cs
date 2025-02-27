@@ -10,12 +10,13 @@ public class GameUI : MonoBehaviour
 {
     PlayerControls pControls;
     Animator anim;
+    EndGoal end;
 
     [SerializeField] Button pauseButton, loseMenuRestartButton, winMenuPlayAgainButton;
     [SerializeField] PresentHealth presHealth;
     [SerializeField] Image presImage;
 
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject pauseMenu, winMenu;
     bool isPaused, doOnce;
 
 
@@ -36,11 +37,14 @@ public class GameUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         doOnce = true;
+
+        end = FindObjectOfType<EndGoal>();
+
     }
 
     private void Escape_started(InputAction.CallbackContext ctx)
     {
-        if (!presHealth.GetLost())
+        if (!presHealth.GetLost() || !end.GetWon())
         {
             if (isPaused)
             {
@@ -57,15 +61,22 @@ public class GameUI : MonoBehaviour
 
     private void Update()
     {
-        //presImage.fillAmount = (float)presHealth.GetHealth()/8;
         AnimatePresentUI();
 
         if (presHealth.GetLost() && doOnce)
         {
             doOnce = false;
-
             presImage.gameObject.SetActive(false);
+
             Lose();
+        }
+
+        if(!presHealth.GetLost() && end.GetWon() && doOnce)
+        {
+            doOnce = false;
+            presImage.gameObject.SetActive(false);
+
+            Win();
         }
     }
 
@@ -145,11 +156,20 @@ public class GameUI : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(loseMenuRestartButton.gameObject);
         Time.timeScale = 0f;
 
+        pControls.UI.Escape.Disable();
+
     }
     void Win()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+
+        winMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+
         EventSystem.current.SetSelectedGameObject(winMenuPlayAgainButton.gameObject);
         Time.timeScale = 0f;
+
+        pControls.UI.Escape.Disable();
 
     }
 

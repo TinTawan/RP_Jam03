@@ -106,6 +106,7 @@ public class PresentHealth : MonoBehaviour
     IEnumerator Lose()
     {
         Time.timeScale = 0.75f;
+        lost = true;
 
         //break present apart
         GetComponent<MeshRenderer>().enabled = false;
@@ -114,7 +115,6 @@ public class PresentHealth : MonoBehaviour
             piece.SetActive(true);
         }
 
-        //yield return new WaitForSeconds(1f);
 
         //stop player movement 
         pMovement.StopInputs();
@@ -123,7 +123,6 @@ public class PresentHealth : MonoBehaviour
 
         //show lose screen
         loseMenu.SetActive(true);
-        lost = true;
     }
 
     public int GetHealth()
