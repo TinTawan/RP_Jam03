@@ -504,17 +504,6 @@
                 },
                 {
                     "name": "",
-                    "id": "98f3e909-cf5d-4ec3-93b4-273f7f62629e",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "18aa5e60-ac93-4ee3-ad89-20bd13d1a4be",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",

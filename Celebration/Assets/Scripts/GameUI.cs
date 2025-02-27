@@ -4,23 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
     PlayerControls pControls;
     Animator anim;
 
-    [SerializeField] Button pauseButton;
+    [SerializeField] Button pauseButton, loseMenuRestartButton, winMenuPlayAgainButton;
     [SerializeField] PresentHealth presHealth;
     [SerializeField] Image presImage;
 
     [SerializeField] GameObject pauseMenu;
-    bool isPaused;
+    bool isPaused, doOnce;
 
 
     private void Start()
     {
         pauseMenu.SetActive(false);
+        presImage.gameObject.SetActive(true);
+
         isPaused = false;
 
         pControls = new PlayerControls();
@@ -28,18 +31,26 @@ public class GameUI : MonoBehaviour
         pControls.UI.Escape.started += Escape_started;
 
         anim = GetComponentInChildren<Animator>();
+
+        Time.timeScale = 1f;
+
+        doOnce = true;
     }
 
     private void Escape_started(InputAction.CallbackContext ctx)
     {
-        if (isPaused)
+        if (!presHealth.GetLost())
         {
-            Resume();
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
-        else
-        {
-            Pause();
-        }
+        
     }
 
 
@@ -47,6 +58,14 @@ public class GameUI : MonoBehaviour
     {
         //presImage.fillAmount = (float)presHealth.GetHealth()/8;
         AnimatePresentUI();
+
+        if (presHealth.GetLost() && doOnce)
+        {
+            doOnce = false;
+
+            presImage.gameObject.SetActive(false);
+            Lose();
+        }
     }
 
     void AnimatePresentUI()
@@ -79,10 +98,14 @@ public class GameUI : MonoBehaviour
 
         isPaused = false;
 
+        presImage.gameObject.SetActive(true);
+
     }
 
     public void Pause()
     {
+        presImage.gameObject.SetActive(false);
+
         EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
 
         Time.timeScale = 0f;
@@ -100,6 +123,27 @@ public class GameUI : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void Lose()
+    {
+        pauseMenu.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(loseMenuRestartButton.gameObject);
+        Time.timeScale = 0f;
+
+    }
+    void Win()
+    {
+        EventSystem.current.SetSelectedGameObject(winMenuPlayAgainButton.gameObject);
+        Time.timeScale = 0f;
+
     }
 
     private void OnDisable()

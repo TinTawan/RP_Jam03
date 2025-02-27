@@ -13,14 +13,17 @@ public class PresentHealth : MonoBehaviour
     [SerializeField] int health = 8;
     [SerializeField] Slider healthSlider;
     [SerializeField] float canvasRotSmoothing = 5f;
+    [SerializeField] GameObject loseMenu;
 
-
-
+    [SerializeField] GameObject[] peices;
+    bool lost;
     private void Start()
     {
         presentAnim = GetComponent<PresentAnim>();
         healthSlider.maxValue = health;
 
+        loseMenu.SetActive(false);
+        lost = false;
     }
 
     private void Update()
@@ -40,13 +43,13 @@ public class PresentHealth : MonoBehaviour
 
         if(health <= 0)
         {
-            Debug.Log("LOSE");
+            StartCoroutine(Lose());
         }
         else
         {
             healthSlider.value = health;
 
-            if(pMovement != null)
+            if(pMovement != null && healthSlider != null)
             {
                 Canvas canvas = healthSlider.GetComponentInParent<Canvas>();
 
@@ -100,8 +103,36 @@ public class PresentHealth : MonoBehaviour
         }
     }
 
+    IEnumerator Lose()
+    {
+        Time.timeScale = 0.75f;
+
+        //break present apart
+        GetComponent<MeshRenderer>().enabled = false;
+        foreach (GameObject piece in peices)
+        {
+            piece.SetActive(true);
+        }
+
+        //yield return new WaitForSeconds(1f);
+
+        //stop player movement 
+        pMovement.StopInputs();
+
+        yield return new WaitForSeconds(2f);
+
+        //show lose screen
+        loseMenu.SetActive(true);
+        lost = true;
+    }
+
     public int GetHealth()
     {
         return health;
+    }
+
+    public bool GetLost()
+    {
+        return lost;
     }
 }

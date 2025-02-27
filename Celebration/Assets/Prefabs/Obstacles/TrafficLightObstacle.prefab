@@ -108,6 +108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Light
       objectReference: {fileID: 0}
+    - target: {fileID: 2641725630727974305, guid: 59eb2b244560d974f98072235beeb5ff,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5153189534144526083, guid: 59eb2b244560d974f98072235beeb5ff,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -131,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 5153189534144526083, guid: 59eb2b244560d974f98072235beeb5ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.96
+      value: 9.68
       objectReference: {fileID: 0}
     - target: {fileID: 5153189534144526083, guid: 59eb2b244560d974f98072235beeb5ff,
         type: 3}

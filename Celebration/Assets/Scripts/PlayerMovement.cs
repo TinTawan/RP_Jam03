@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool ragdoll = false;
 
     GrabPresent grabPres;
-    bool droppedPresent;
 
 
     private void Awake()
@@ -41,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
         cam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
+
+        ragdoll = false;
     }
 
     private void OnEnable()
@@ -162,10 +163,10 @@ public class PlayerMovement : MonoBehaviour
             Vector3 end = new(transform.position.x, transform.position.y - groundCheckDist, transform.position.z);
             Debug.DrawLine(transform.position, end, Color.red);
         }
-        else
+        /*else
         {
             isGrounded = false;
-        }
+        }*/
         
     }
 
@@ -232,6 +233,18 @@ public class PlayerMovement : MonoBehaviour
         return ragdoll && grabPres.GetHeld();
     }
 
+    public void StopInputs()
+    {
+        pControls.General.Disable();
+
+        moveVect = Vector3.zero;
+
+        pControls.General.Escape.Disable();
+        pControls.General.Look.Disable();
+
+        pControls.UI.Escape.Disable();
+
+    }
 
     private void OnDisable()
     {

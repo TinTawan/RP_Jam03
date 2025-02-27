@@ -9,6 +9,10 @@ public class RagdollStabiliser : MonoBehaviour
     [SerializeField] bool activateForce;
     [SerializeField] float forceVal = 2f;
 
+    private void Start()
+    {
+        activateForce = true;
+    }
 
     private void FixedUpdate()
     {
