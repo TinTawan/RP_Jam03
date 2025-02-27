@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         grabPres = GetComponentInChildren<GrabPresent>();
 
         cam = Camera.main.transform;
-        Cursor.lockState = CursorLockMode.Locked;
 
         ragdoll = false;
     }

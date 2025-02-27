@@ -33,6 +33,7 @@ public class GameUI : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
 
         doOnce = true;
     }
@@ -93,6 +94,8 @@ public class GameUI : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
 
@@ -104,6 +107,8 @@ public class GameUI : MonoBehaviour
 
     public void Pause()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+
         presImage.gameObject.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
@@ -133,6 +138,8 @@ public class GameUI : MonoBehaviour
 
     void Lose()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+
         pauseMenu.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(loseMenuRestartButton.gameObject);

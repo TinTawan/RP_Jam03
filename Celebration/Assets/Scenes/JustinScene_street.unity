@@ -413,7 +413,7 @@ MonoBehaviour:
     type: 3}
   startPos: {fileID: 811430454}
   streetLength: 8
-  chanceForCR: 20
+  chanceForCR: 25
 --- !u!1001 &246523257
 PrefabInstance:
   m_ObjectHideFlags: 0
